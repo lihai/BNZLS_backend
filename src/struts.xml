@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">  
+<struts>
+	<package name="custom_struts" extends="struts-default,common-system-default">
+		<interceptors>
+			<interceptor name="linkage_splitPage" class="com.system.struts.title.SplitPageInterceptor"></interceptor>
+			<interceptor-stack name="linkage_stack">
+				<interceptor-ref name="linkage_splitPage"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="linkage_stack"/>
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="login">/sessionAvailable.jsp</result>
+			<result name="wait">/sessionAvailable.jsp</result>
+			<result name="ok">/sessionAvailable.jsp</result>
+			<result name="fail">/sessionAvailable.jsp</result>
+			<result name="ajax" type="ajax"></result>
+		</global-results>
+	</package>
+	<include file="com/scework/spi/action/struts_spi_action.xml"/>
+	
+	<!-- 
+    <include file="com/scework/business/user/struts_business_user.xml"/>
+    <include file="com/scework/business/menu/struts_business_menu.xml"/>
+     -->
+</struts>

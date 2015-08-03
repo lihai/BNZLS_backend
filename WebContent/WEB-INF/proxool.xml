@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  <proxool>
+    <alias>xml-test</alias>
+    <driver-url>jdbc:mysql://localhost:3306/mfzls</driver-url>
+     <driver-class>com.mysql.jdbc.Driver</driver-class>
+     <driver-properties>
+         <property name="user" value="mfzls_user"/>
+         <property name="password" value="mfzls_user"/>
+		 <property name="characterEncoding" value="utf-8"/>
+		 <property name="useUnicode" value="true"/>
+     </driver-properties>
+    <maximum-connection-count>60</maximum-connection-count>
+    <house-keeping-test-sql>select 1</house-keeping-test-sql>
+  </proxool>
